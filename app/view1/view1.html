@@ -1,0 +1,17 @@
+<div>
+    <input ng-model="item">
+    <button ng-click="add()">Add</button>
+    <span>{{(notes | filterByStatus : 'done').length}}/{{notes.length}}</span>
+</div>
+<div>
+    <button ng-click="all()">All</button>
+    <button ng-click="done()">Done</button>
+    <button ng-click="undone()">Undone</button>
+</div>
+<ul>
+    <li ng-repeat="note in notes | filterByStatus : status">
+        <span ng-class="{'done':note.done}" >{{note.name}}</span>
+        <button ng-click="toggle(note)">toggle</button>
+        <button ng-click="remove(note)">remove</button>
+    </li>
+</ul>
