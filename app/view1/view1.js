@@ -31,7 +31,7 @@ angular.module('myApp.view1', ['ngRoute'])
             $scope.status = "undone";
         }
         $scope.remove = function (note) {
-            $scope.notes.splice(note,1);
+            $scope.notes.splice($scope.notes.indexOf(note),1);
         }
     }])
     .filter('filterByStatus', function () {
